@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+   
+       @if(User.Identity.IsAuthenticated)
+       {
+            <h1 style="color:#000">
+                Welcome use @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")
+            </h1>
+            <a href="@Url.Action("Signout","Home")">Sign out</a>
+        }
+   
+</div>
